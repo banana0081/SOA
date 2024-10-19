@@ -18,28 +18,57 @@ paths:
       parameters:
         - in: query
           name: filter
+          required: false
           schema:
             type: array
             items:
               type: string
-          description: >
-            Параметры фильтрации (например, `name`, `numberOfRooms` и т.д.) в порядке приоритета от наивысшего к наименьшему.
-
+          style: form
+          explode: true
+          description: |
+            Параметры фильтрации в порядке приоритета:
+            1. **`name`**: имя квартиры
+            2. **`numberOfRooms`**: количество комнат
+            3. **`area`**: площадь квартиры
+            4. **`timeToMetroByTransport`**: время до метро на транспорте
+            5. **`centralHeating`**: наличие центрального отопления (true/false)
+            6. **`furnish`**: тип мебели (DESIGNER, NONE, FINE)
+            7. **`creationDate`**: дата создания квартиры
+            8. **`coordinates`**: координаты квартиры
         - in: query
           name: sort
+          required: false
           schema:
-            type: string
-          description: Поле для сортировки (например, `timeToMetroByTransport`).
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          description: |
+            Параметры сортировки в порядке приоритета:
+            1. **`name`**: имя квартиры
+            2. **`numberOfRooms`**: количество комнат
+            3. **`area`**: площадь квартиры
+            4. **`timeToMetroByTransport`**: время до метро на транспорте
+            5. **`centralHeating`**: наличие центрального отопления (true/false)
+            6. **`furnish`**: тип мебели (DESIGNER, NONE, FINE)
+            7. **`creationDate`**: дата создания квартиры
         - in: query
           name: page
+          required: false
           schema:
             type: integer
-          description: Номер страницы для пагинации.
+            minimum: 1
+          description: |
+            Номер страницы для пагинации (начиная с 1).
         - in: query
-          name: size
+          name: pageSize
+          required: false
           schema:
             type: integer
-          description: Размер страницы для пагинации.
+            minimum: 1
+          description: |
+            Количество квартир на странице (по умолчанию 10).
       responses:
         '200':
           description: Квартиры успешно получены
@@ -53,8 +82,7 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/EmptyResponse'
-              example: |
-                <Response/>
+              example: <Response></Response>
 
         '400':
           description: Неверные параметры запроса
@@ -420,8 +448,7 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/EmptyResponse'
-              example: |
-                <Response/>
+              example: <Response></Response>
         '404':
           description: Квартиры не найдены по указанной подстроке
           content:
