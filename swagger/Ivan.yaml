@@ -1,0 +1,263 @@
+openapi: 3.0.1
+info:
+  title: Управление коллекцией квартир
+  description: API для управления коллекцией объектов класса `Flat`.
+  version: 1.0.0
+servers:
+  - url: http://se.ifmo.ru/~s339112 - Погрибняк helios
+    description: Погрибняк helios
+  - url: http://se.ifmo.ru/~s336412 - Бугаев helios
+    description: Бугаев helios
+
+paths:
+  /agency/get-cheapest/{id1}/{id2}:
+    get:
+      summary: Получить более дешевую квартиру по ID
+      tags: [Дополнительные операции]
+      operationId: getCheapestFlat
+      parameters:
+        - name: id1
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: id2
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Более дешевая квартира успешно найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CheaperFlat'
+              example:
+                id: 1
+                name: "Дешевая квартира"
+                price: 5000000
+        '404':
+          description: Одна из квартир с указанным ID не найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Квартира с ID `1` не найдена."
+
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при выборе дешевой квартиры."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  /agency/get-ordered-by-time-to-metro/{by-transport}/{desc}:
+    get:
+      summary: Получить список квартир, отсортированный по времени до метро
+      operationId: getOrderedByTimeToMetro
+      tags: [Дополнительные операции]
+      parameters:
+        - name: by-transport
+          in: path
+          required: true
+          schema:
+            type: boolean
+            nullable: false
+          description: Сортировать по времени до метро на транспорте
+        - name: desc
+          in: path
+          required: true
+          schema:
+            type: boolean
+            nullable: false
+          description: Сортировать по убыванию (true) или возрастанию (false)
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Номер страницы для пагинации.
+        - in: query
+          name: size
+          schema:
+            type: integer
+          description: Размер страницы для пагинации.
+      responses:
+        '200':
+          description: Список квартир успешно отсортирован
+          content:
+            application/xml:      
+              schema:
+                $ref: '#/components/schemas/FlatsSortedByTimeResponse'
+              example:
+                - id: 1
+                  name: "Квартира 1"
+                  timeToMetroByTransport: 10
+                - id: 2
+                  name: "Квартира 2"
+                  timeToMetroByTransport: 20
+        '400':
+          description: Неверные параметры запроса
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Неверный параметр пагинации: `size`."
+        '404':
+          description: Страницы с таким номером не существует
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Страницы с таким номером не существует."
+        '500':
+          description: Внутренняя ошибка сервера при сортировке
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при сортировке квартир."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+components:
+  schemas:
+    Flat:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+          uniqueItems: true
+          minimum: 1
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+        creationDate:
+          type: string
+          format: date-time
+          nullable: false
+        area:
+          type: integer
+          minimum: 1
+        numberOfRooms:
+          type: integer
+          nullable: false
+          minimum: 1
+        timeToMetroByTransport:
+          type: integer
+          minimum: 1
+        centralHeating:
+          type: boolean
+          nullable: true
+        furnish:
+          type: string
+          nullable: false
+          enum: [DESIGNER, NONE, FINE]
+        house:
+          $ref: '#/components/schemas/House'
+
+    Coordinates:
+      type: object
+      properties:
+        x:
+          type: number
+        y:
+          type: integer
+          minimum: -649
+
+    House:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+        year:
+          type: integer
+          minimum: 1
+        numberOfFlatsOnFloor:
+          type: integer
+          minimum: 1
+    
+    Error:
+      type: object
+      properties:
+          code:
+            type: integer
+            example: 500
+            nullable: false
+          message:
+            type: string
+            nullable: false
+    CheaperFlat:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+          minimum: 1
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        price:
+          type: integer
+          nullable: false
+          minimum: 0
+      xml:
+        name: Flat
+    FlatSortedByTime:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+          minimum: 1
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        timeToMetroByTransport:
+          type: integer
+          nullable: false
+          minimum: 0
+      xml:
+        name: Flat
+
+    FlatsSortedByTimeResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/FlatSortedByTime'
+      xml:
+        name: Flats
+        wrapped: true

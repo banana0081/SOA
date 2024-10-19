@@ -1,0 +1,578 @@
+openapi: 3.0.1
+info:
+  title: Управление коллекцией квартир
+  description: API для управления коллекцией объектов класса `Flat`.
+  version: 1.0.0
+servers:
+  - url: http://se.ifmo.ru/~s339112 - Погрибняк helios
+    description: Погрибняк helios
+  - url: http://se.ifmo.ru/~s336412 - Бугаев helios
+    description: Бугаев helios
+
+paths:
+  /flats:
+    get:
+      summary: Получить список квартир с возможностью фильтрации, сортировки и пагинации
+      tags: [Базовый набор операций]
+      operationId: getAllFlats
+      parameters:
+        - in: query
+          name: filter
+          schema:
+            type: array
+            items:
+              type: string
+          description: >
+            Параметры фильтрации (например, `name`, `numberOfRooms` и т.д.) в порядке приоритета от наивысшего к наименьшему.
+
+        - in: query
+          name: sort
+          schema:
+            type: string
+          description: Поле для сортировки (например, `timeToMetroByTransport`).
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Номер страницы для пагинации.
+        - in: query
+          name: size
+          schema:
+            type: integer
+          description: Размер страницы для пагинации.
+      responses:
+        '200':
+          description: Квартиры успешно получены
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FlatsResponse'
+        '204':
+          description: Не найдено ни одной подходящей квартиры
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+              example: |
+                <Response/>
+
+        '400':
+          description: Неверные параметры запроса
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Неверный параметр фильтрации: `floor`."
+        '404':
+          description: Страницы с таким номером не существует
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Страницы с таким номером не существует."
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера. Попробуйте позже."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+    post:
+      summary: Добавить новую квартиру
+      tags: [Базовый набор операций]
+      operationId: createFlat
+      requestBody:
+        description: Объект квартиры, который нужно добавить
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Flat'
+      responses:
+        '201':
+          description: Квартира успешно создана
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Flat'
+        '400':
+          description: Данные квартиры некорректны
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Поле `name` не может быть пустым."
+
+        '409':
+          description: Квартира с таким ID уже существует
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 409
+                message: "Квартира с ID `3` уже существует."
+
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при создании квартиры."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  /flats/{id}:
+    get:
+      summary: Получить квартиру по ID
+      tags: [Базовый набор операций]
+      operationId: getFlatById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор квартиры
+      responses:
+        '200':
+          description: Квартира успешно найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Flat'
+        '400':
+          description: Предоставлен некорректный id
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Поле `id` должно быть числом."
+        '404':
+          description: Квартира с указанным ID не найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Квартира с ID `10` не найдена."
+
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при попытке найти квартиру."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+    put:
+      summary: Обновить информацию о квартире
+      tags: [Базовый набор операций]
+      operationId: updateFlat
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор квартиры
+      requestBody:
+        description: Объект квартиры с обновленными данными
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Flat'
+      responses:
+        '200':
+          description: Квартира успешно обновлена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Flat'
+        '400':
+          description: Предоставлен некорректный id
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Поле `id` должно быть числом."
+        '404':
+          description: Квартира с указанным ID не найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Квартира с ID `5` не найдена."
+
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при обновлении данных квартиры."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+    delete:
+      summary: Удалить квартиру по ID
+      tags: [Базовый набор операций]
+      operationId: deleteFlat
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор квартиры
+      responses:
+        '200':
+          description: Квартира успешно удалена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DeleteFlatResponse'
+              example:
+                code: 200
+                message: "Квартира с ID '5' успешно удалена."
+        '400':
+          description: Предоставлен некорректный id
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                message: "Поле `id` должно быть числом."
+        '404':
+          description: Квартира с указанным ID не найдена
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Квартира с ID `5` не найдена."
+
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при удалении квартиры."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  /flats/rooms/sum:
+    get:
+      summary: Рассчитать сумму значений поля numberOfRooms для всех квартир
+      tags: [Дополнительные операции]
+      operationId: getRoomsSum
+      responses:
+        '200':
+          description: Сумма комнат успешно рассчитана
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TotalRoomsResponse'
+              example:
+                totalRooms: 45
+        '500':
+          description: Внутренняя ошибка сервера при расчете
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при расчете суммы комнат."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  /flats/metro/average:
+    get:
+      summary: Рассчитать среднее время до метро на транспорте для всех квартир
+      tags: [Дополнительные операции]
+      operationId: getAverageTimeToMetro
+      responses:
+        '200':
+          description: Среднее время успешно рассчитано
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AverageTimeResponse'
+              example:
+                averageTime: 15.5
+        '500':
+          description: Внутренняя ошибка сервера при расчете
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка при расчете среднего времени до метро."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  /flats/search:
+    get:
+      summary: Вернуть квартиры, название которых содержит указанную подстроку
+      tags: [Дополнительные операции]
+      operationId: searchFlatsByName
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Подстрока для поиска в названии квартиры
+      responses:
+        '200':
+          description: Квартиры успешно найдены
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FlatsResponse'
+        '204':
+          description: Не найдено ни одной подходящей квартиры
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+              example: |
+                <Response/>
+        '404':
+          description: Квартиры не найдены по указанной подстроке
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 404
+                message: "Квартиры с подстрокой `парк` не найдены."
+
+        '500':
+          description: Внутренняя ошибка сервера при поиске
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 500
+                message: "Ошибка сервера при поиске квартир."
+        '503':
+          description: Сервис недоступен
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 503
+                message: "В данный момент сервис недоступен. Попробуйте позже."
+
+  
+components:
+  schemas:
+    Flat:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+          uniqueItems: true
+          minimum: 1
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+        creationDate:
+          type: string
+          format: date-time
+          nullable: false
+        area:
+          type: integer
+          minimum: 1
+        numberOfRooms:
+          type: integer
+          nullable: false
+          minimum: 1
+        timeToMetroByTransport:
+          type: integer
+          minimum: 1
+        centralHeating:
+          type: boolean
+          nullable: true
+        furnish:
+          type: string
+          nullable: false
+          enum: [DESIGNER, NONE, FINE]
+        house:
+          $ref: '#/components/schemas/House'
+
+
+    FlatsResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Flat'
+      xml:
+        name: Flats
+        wrapped: true
+
+    Coordinates:
+      type: object
+      properties:
+        x:
+          type: number
+        y:
+          type: integer
+          minimum: -649
+
+    House:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+        year:
+          type: integer
+          minimum: 1
+        numberOfFlatsOnFloor:
+          type: integer
+          minimum: 1
+    
+    Error:
+      type: object
+      properties:
+          code:
+            type: integer
+            example: 500
+            nullable: false
+          message:
+            type: string
+            nullable: false
+
+    DeleteFlatResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: "Квартира с ID '5' успешно удалена."
+      xml:
+        name: DeleteFlatResponse
+
+    TotalRoomsResponse:
+      type: object
+      properties:
+        totalRooms:
+          type: integer
+          example: 45
+      xml:
+        name: TotalRoomsResponse
+
+    AverageTimeResponse:
+      type: object
+      properties:
+        averageTime:
+          type: number
+          format: float
+          example: 15.5
+      xml:
+        name: AverageTimeResponse
+    FlatsFoundResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Flat'
+      xml:
+        name: FlatsFoundResponse
+        wrapped: true
+    EmptyResponse:
+      type: object
+      properties: {}
+      xml:
+        name: Response  # This will set the root element name for XML output
