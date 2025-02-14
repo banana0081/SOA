@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="second-service.ejb-module.main:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64a56c61-cd07-4fb3-b311-d6a1b33df131" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/AgencySoapServiceInterface.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/Open.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/soap-module/src/main/webapp/WEB-INF/jboss-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/artifacts/second_service_ejb_module_main_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/artifacts/second_service_ejb_module_main_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/soap-module">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/web">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="second-service" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Script" />
+        <option value="cdi.beans_4_1" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Annotation" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="KotlinScriptingSettings">
+    <option name="suppressDefinitionsCheck" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2sBlD37zJbCLoPDjcd8yf5D1hLI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build second-service.executor": "Run",
+    "Gradle.second-service [:wrapper].executor": "Run",
+    "Gradle.second-service [build].executor": "Run",
+    "Gradle.second-service [wrapper].executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 35.0.0.Final.executor": "Run",
+    "JBoss/WildFly Server.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Workspace/to commit/SOA/lab3/second-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hopeg\IdeaProjects\second-service\web-module\src\main\kotlin\com\drainshawty\webmodule\web\responses" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build" />
+      <command value="gradle wrapper" />
+      <command value="gradle :wrapper" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="JBossConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="JBoss/WildFly 35.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 35.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="second-service.ejb-module.main:jar">
+          <settings />
+        </artifact>
+        <artifact name="Gradle : com.drainshawty : soap-module-1.0-SNAPSHOT.war">
+          <settings />
+        </artifact>
+        <artifact name="Gradle : com.drainshawty : web-module-1.0-SNAPSHOT.war">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="SERVER" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52332" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.drainshawty : web-module-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : com.drainshawty : soap-module-1.0-SNAPSHOT.war" />
+          <artifact name="second-service.ejb-module.main:jar" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64a56c61-cd07-4fb3-b311-d6a1b33df131" name="Changes" comment="" />
+      <created>1737936727626</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737936727626</updated>
+      <workItem from="1738020582665" duration="8610000" />
+      <workItem from="1739499694139" duration="3547000" />
+      <workItem from="1739514155051" duration="12529000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

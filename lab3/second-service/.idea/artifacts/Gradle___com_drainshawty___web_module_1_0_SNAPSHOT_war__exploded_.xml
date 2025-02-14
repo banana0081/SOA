@@ -1,0 +1,82 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" external-system-id="GRADLE" name="Gradle : com.drainshawty : web-module-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/web-module/build/libs/exploded/web-module-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <buildTaskPath>:web-module:war_exploded</buildTaskPath>
+        <cleanTaskPath>:web-module:cleanWar_exploded</cleanTaskPath>
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web-module/build/libs/exploded/web-module-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="second-service.web-module.main/web/Web Gradle : web-module-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="second-service.web-module.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/web-module/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="com.drainshawty-ejb-module-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="second-service.ejb-module.main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/ejb-module/build/resources/main" />
+          </element>
+          <element id="library" level="project" name="Gradle: jakarta.platform:jakarta.jakartaee-web-api:10.0.0" />
+          <element id="library" level="project" name="Gradle: jakarta.ejb:jakarta.ejb-api:4.0.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.35" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld.se:weld-se-core:5.1.0.Final" />
+          <element id="library" level="project" name="Gradle: jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.media:jersey-media-multipart:2.35" />
+          <element id="library" level="project" name="Gradle: jakarta.annotation:jakarta.annotation-api:2.1.1" />
+          <element id="library" level="project" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.2" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.5" />
+          <element id="library" level="project" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: org.postgresql:postgresql:42.7.4" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10" />
+          <element id="library" level="project" name="Gradle: jakarta.interceptor:jakarta.interceptor-api:2.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.transaction:jakarta.transaction-api:2.0.1" />
+          <element id="library" level="project" name="Gradle: jakarta.el:jakarta.el-api:5.0.1" />
+          <element id="library" level="project" name="Gradle: jakarta.inject:jakarta.inject-api:2.0.1" />
+          <element id="library" level="project" name="Gradle: jakarta.servlet:jakarta.servlet-api:6.0.0" />
+          <element id="library" level="project" name="Gradle: jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: jakarta.faces:jakarta.faces-api:4.0.1" />
+          <element id="library" level="project" name="Gradle: jakarta.websocket:jakarta.websocket-api:2.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.websocket:jakarta.websocket-client-api:2.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.json:jakarta.json-api:2.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.json.bind:jakarta.json.bind-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: jakarta.persistence:jakarta.persistence-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: jakarta.validation:jakarta.validation-api:3.0.2" />
+          <element id="library" level="project" name="Gradle: jakarta.enterprise:jakarta.enterprise.lang-model:4.0.1" />
+          <element id="library" level="project" name="Gradle: jakarta.authentication:jakarta.authentication-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.35" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.35" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:jakarta.inject:2.6.1" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld:weld-lite-extension-translator:5.1.0.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld.environment:weld-environment-common:5.1.0.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.classfilewriter:jboss-classfilewriter:1.2.5.Final" />
+          <element id="library" level="project" name="Gradle: org.jvnet.mimepull:mimepull:1.9.13" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:txw2:2.3.5" />
+          <element id="library" level="project" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12" />
+          <element id="library" level="project" name="Gradle: com.sun.activation:jakarta.activation:2.0.0" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.10" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.1.10" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.3" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld:weld-core-impl:5.1.0.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging-processor:2.2.1.Final" />
+          <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld:weld-spi:5.0.SP3" />
+          <element id="library" level="project" name="Gradle: org.jboss.weld:weld-api:5.0.SP3" />
+          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging:3.5.0.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging-annotations:2.2.1.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.jdeparser:jdeparser:2.0.3.Final" />
+          <element id="library" level="project" name="Gradle: org.checkerframework:checker-qual:3.42.0" />
+          <element id="library" level="project" name="Gradle: jakarta.ws.rs:jakarta.ws.rs-api:4.0.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,60 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="second-service.ejb-module.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/second_service_ejb_module_main_jar</output-path>
+    <root id="archive" name="second-service.ejb-module.main.jar">
+      <element id="module-output" name="second-service.ejb-module.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld/weld-api/5.0.SP3/d912a98b3753c170efdb929b21a0b34f535063e9/weld-api-5.0.SP3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/3.0.0/9275db6e21287df61690989254a0b46d8d31e99a/jakarta.xml.bind-api-3.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.enterprise/jakarta.enterprise.lang-model/4.0.1/2b195781faad31c1724d8122136909c34c3ae79e/jakarta.enterprise.lang-model-4.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.json/jakarta.json-api/2.1.0/1e713a9cd9ea9bd4dc6ec263d47e1b7f1cf18082/jakarta.json-api-2.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld/weld-lite-extension-translator/5.1.0.Final/69eacb4c04168dc7847f4016025b8c153d34494f/weld-lite-extension-translator-5.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.12/cbbe1a62b0cc6c85972e99d52aaee350153dc530/istack-commons-runtime-3.0.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld.environment/weld-environment-common/5.1.0.Final/e7b149394f20ecb80db2a173b3162f55c858c31e/weld-environment-common-5.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld/weld-core-impl/5.1.0.Final/bc74dce2a67f74aa2c20a12369fa75a601e3085d/weld-core-impl-5.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.2/99f53adba383cb1bf7c3862844488574b559621f/jakarta.activation-api-1.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging-annotations/2.2.1.Final/ee3db82d956ee22c4f1f2df9c611e048e79a4a43/jboss-logging-annotations-2.2.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.35/ea92be0dd34d0b298930a7514e715783f4eaba97/jersey-client-2.35.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.faces/jakarta.faces-api/4.0.1/c000786f025a6c09b26dbb8288a4c73452a679ac/jakarta.faces-api-4.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.35/c6efc2ee82d2550e6385a7f7b1c08651f71afb7a/jersey-server-2.35.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld/weld-spi/5.0.SP3/e24b5f540396d389849088e7c29c5cf6c345bdf7/weld-spi-5.0.SP3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/638ec33f363a94d41a4f03c3e7d3dcfba64e402d/checker-qual-3.42.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/2.0.0/f4e7519148dee347c7666f336210deedb8aca09d/jakarta.activation-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.0.Final/c19307cc11f28f5e2679347e633a3294d865334d/jboss-logging-3.5.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.websocket/jakarta.websocket-client-api/2.1.0/ac185d7945d4c0a501b79ae003d9f8d9a1ae7eff/jakarta.websocket-client-api-2.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jvnet.mimepull/mimepull/1.9.13/a4f12d0da986cae55dd5c4a735b4fefc700eb266/mimepull-1.9.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.5/ec8930fa62e7b1758b1664d135f50c7abe86a4a3/txw2-2.3.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-multipart/2.35/5181de4ae2c81147cb788e946e96c06a9765e84f/jersey-media-multipart-2.35.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.servlet/jakarta.servlet-api/6.0.0/abecc699286e65035ebba9844c03931357a6a963/jakarta.servlet-api-6.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.interceptor/jakarta.interceptor-api/2.1.0/1d06a662708601400af4556577ee514c4ad01549/jakarta.interceptor-api-2.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.classfilewriter/jboss-classfilewriter/1.2.5.Final/a0340f52f4b8ff873f64a7c3c94bdc69c8ccb443/jboss-classfilewriter-1.2.5.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/51a520e3fae406abb84e2e1148e6746ce3f80a1a/jakarta.transaction-api-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.platform/jakarta.jakartaee-web-api/10.0.0/42cdd78356fee801cbce5e9ebe54a35dfef4d1ea/jakarta.jakartaee-web-api-10.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.ejb/jakarta.ejb-api/4.0.1/70f6c55dad415f58b8428ae4bb215484368b8764/jakarta.ejb-api-4.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.weld.se/weld-se-core/5.1.0.Final/eccfc68c4142e83c2d4892c067501f486eba36a3/weld-se-core-5.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.authentication/jakarta.authentication-api/3.0.0/e1e3503070dcddcc9e24a062f734069446a99bc3/jakarta.authentication-api-3.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.security.enterprise/jakarta.security.enterprise-api/3.0.0/ca9d8039c16db579b7d45813015c8d677105bc0f/jakarta.security.enterprise-api-3.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/2.1.10/c9d8cb43c1d65c500ffbbb6eb591b9c8928caf6d/kotlin-stdlib-jdk7-2.1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.ws.rs/jakarta.ws.rs-api/3.1.0/15ce10d249a38865b58fc39521f10f29ab0e3363/jakarta.ws.rs-api-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.websocket/jakarta.websocket-api/2.1.0/9b2b5363ead21c4480e37ec15378583e11d3a823/jakarta.websocket-api-2.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.10/d3028429e7151d7a7c1a0d63a4f60eac86a87b91/kotlin-stdlib-2.1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.servlet.jsp/jakarta.servlet.jsp-api/3.1.0/ea5fe947c87c9603db997f708587270593164a1e/jakarta.servlet.jsp-api-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.5/a169a961a2bb9ac69517ec1005e451becf5cdfab/jaxb-runtime-2.3.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/66901fa1c373c6aff65c13791cc11da72060a8d6/jakarta.persistence-api-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api/3.0.0/8ace30b09ce88dc6f19d4f59251cc83a23cc180a/jakarta.servlet.jsp.jstl-api-3.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/92b6631659ba35ca09e44874d3eb936edfeee532/jakarta.validation-api-3.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.10/3009fa6a21ebb400fe38c70eaf218a0c669ddbe2/kotlin-stdlib-jdk8-2.1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging-processor/2.2.1.Final/271a8e01caec4017d7a5104ef0b24390b4b06711/jboss-logging-processor-2.2.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.7.4/264310fd7b2cd76738787dc0b9f7ea2e3b11adc1/postgresql-42.7.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.35/2f15ec1b3a3598d6b12d4b0c6ff6f0905f5e5b4c/jersey-common-2.35.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/4c28afe1991a941d7702fe1362c365f0a8641d1e/jakarta.inject-api-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/jakarta.inject/2.6.1/8096ebf722902e75fbd4f532a751e514f02e1eb7/jakarta.inject-2.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.3/de3b21279df7e755e38275137539be5e2c80dd58/osgi-resource-locator-1.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.el/jakarta.el-api/5.0.1/6f46fb9143b18b7956806a657275fc41376d1a50/jakarta.el-api-5.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.enterprise/jakarta.enterprise.cdi-api/4.0.1/2012f388c6de83e29101cbf82c3ed2bd37931c64/jakarta.enterprise.cdi-api-4.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.jdeparser/jdeparser/2.0.3.Final/f1982f9caa0ed8a2663d4c648aaa9a82d14eb962/jdeparser-2.0.3.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.json.bind/jakarta.json.bind-api/3.0.0/9dab3b7d91ed6b22f7c76cc3674805482247af32/jakarta.json.bind-api-3.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

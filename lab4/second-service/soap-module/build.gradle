@@ -1,0 +1,52 @@
+plugins {
+  id 'java'
+  id 'org.jetbrains.kotlin.plugin.allopen' version '2.0.20-Beta1'
+  id 'org.jetbrains.kotlin.plugin.noarg' version '2.0.20-Beta1'
+  id 'war'
+  id 'org.jetbrains.kotlin.jvm'
+}
+
+group 'com.drainshawty'
+version '1.0-SNAPSHOT'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+allOpen {
+  annotation('jakarta.ejb.Stateless')
+  annotation('jakarta.persistence.Entity')
+  annotation('jakarta.persistence.Embeddable')
+  annotation('jakarta.persistence.MappedSuperclass')
+  annotation('jakarta.enterprise.context.RequestScoped')
+  annotation('jakarta.enterprise.context.ApplicationScoped')
+  annotation('jakarta.xml.bind.annotation.XmlRootElement')
+  annotation('com.drainshawty.soapmodule.Open')
+
+}
+
+noArg {
+  annotation('jakarta.ejb.Stateless')
+  annotation('jakarta.persistence.Entity')
+  annotation('jakarta.persistence.Embeddable')
+  annotation('jakarta.persistence.MappedSuperclass')
+  annotation('jakarta.enterprise.context.RequestScoped')
+  annotation('jakarta.enterprise.context.ApplicationScoped')
+  annotation('jakarta.xml.bind.annotation.XmlRootElement')
+  annotation('com.drainshawty.soapmodule.Open')
+}
+
+dependencies {
+  implementation("jakarta.jws:jakarta.jws-api:3.0.0")
+  implementation("jakarta.platform:jakarta.jakartaee-web-api:10.0.0")
+  implementation("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
+  implementation("org.jboss.spec.javax.xml.ws:jboss-jaxws-api_2.3_spec:2.0.0.Final")
+  implementation(project(":ejb-module"))
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
