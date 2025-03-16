@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+      xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+      xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:api-platform-gw="http://www.mulesoft.org/schema/mule/api-platform-gw" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd 
+        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f9bb52ee-8e72-4271-9868-f26c3c3c4ea3" basePath="/" >
+		<http:listener-connection host="0.0.0.0" port="9090" protocol="HTTPS">
+			<tls:context>
+                <tls:key-store path="mule-service.jks" keyPassword="qwerty1" password="qwerty1"/>
+            </tls:context>
+		</http:listener-connection>
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ca12a8b5-d1ce-4fba-8552-c9041c529a9f">
+		<http:request-connection host="5.252.118.192" port="8082" protocol="HTTPS"/>
+	</http:request-config>
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="3d602ec8-3632-4984-8e9a-230755ea4a86" >
+		<wsc:connection wsdlLocation="https://localhost:5300/soap/AgencySoapService?wsdl" service="AgencySoapServiceService" port="AgencySoapServicePort" address="https://localhost:5300/soap/AgencySoapService" >
+		</wsc:connection>
+	</wsc:config>
+	<flow name="server-esbFlow" doc:id="cd51e777-ac42-486f-be61-6a9a2204158a" >
+		<http:listener doc:name="Listener" doc:id="cc0268b4-1792-44e3-8c84-6ce90473ece3" config-ref="HTTP_Listener_config" path="/flats/{id}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2a44866e-a0fe-464b-82df-3901fa721efa" message="ID: #[attributes.uriParams.id]"/>
+		<http:request method="GET" doc:name="Request" doc:id="3049e96e-77c7-4497-882b-d3422f969a90" config-ref="HTTP_Request_configuration" path="/flats/{id}">
+			<http:uri-params ><![CDATA[#[output application/json
+---
+{
+	"id" : attributes.uriParams.'id'
+}]]]></http:uri-params>
+		</http:request>
+	</flow>
+	<flow name="server-esbFlow1" doc:id="f13c6ac6-37c8-4c31-9c37-bf03958dac49">
+		<http:listener doc:name="Listener" doc:id="3f5435c3-c44c-48f4-b7bb-3a1a2e0a5fe3" config-ref="HTTP_Listener_config" path="/flats" />	
+		<http:request method="GET" doc:name="Request" doc:id="beabff9a-82a8-402f-a2d0-5d4b1ddb73a2" path="/flats" config-ref="HTTP_Request_configuration">
+			<http:query-params><![CDATA[#[output application/json
+---
+{
+	"page" : attributes.queryParams.'page',
+	"size": attributes.queryParams.'size',
+	"sort": attributes.queryParams.'sort'
+}]]]></http:query-params>
+		</http:request>
+	</flow>
+	<flow name="server-esbFlow2" doc:id="3ff61457-d276-4db3-b8cf-b76490d9dd91" >
+		<http:listener doc:name="Listener" doc:id="26b323b8-e380-4637-ac65-cfc16391ef3e" config-ref="HTTP_Listener_config" path="/agency/get-cheaper/{id1}/{id2}">
+		<http:response >
+				<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Access-Control-Allow-Origin" : "*",
+	"Access-Control-Allow-Methods" : "GET, PUT, POST, DELETE, HEAD, OPTIONS",
+	"Access-Control-Allow-Headers" : "*",
+	"Access-Control-Allow-Credentials" : "true"
+}]]]></http:headers>
+			</http:response>
+		</http:listener>
+		
+		<ee:transform doc:name="Transform Message" doc:id="b2e8988b-d6a7-4b04-b20d-5e19226f5c4c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://soapmodule.drainshawty.com/
+var id1 = attributes.uriParams.id1
+var id2 = attributes.uriParams.id2
+---
+{
+	ns0#getCheaper: {
+		arg0: id1,
+		arg1: id2
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="329f34a1-b8fb-4da7-8417-e2fa4994ad22" config-ref="Web_Service_Consumer_Config" operation="getCheaper"/>
+		<ee:transform doc:name="Transform Message" doc:id="4253547c-3d61-4276-816d-6bab0b7ea0cf" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns2 http://soapmodule.drainshawty.com/
+
+var flatData = payload.body.ns2#getCheaperResponse.return
+
+---
+{
+    Flat: {
+        id: flatData.id,
+        name: flatData.name,
+        price: flatData.price
+    }
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="server-esbFlow3" doc:id="614c6003-5d7a-4154-86ea-212b1bb50b61" >
+		<http:listener doc:name="Listener" doc:id="ee08cac9-11d9-4031-82ec-c09b4d076d97" config-ref="HTTP_Listener_config" path="/agency/get-ordered-by-time-to-metro/{byTransport}/{desc}">
+		
+		<http:response >
+				<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Access-Control-Allow-Origin" : "*",
+	"Access-Control-Allow-Methods" : "GET, PUT, POST, DELETE, HEAD, OPTIONS",
+	"Access-Control-Allow-Headers" : "*",
+	"Access-Control-Allow-Credentials" : "true"
+}]]]></http:headers>
+			</http:response>
+		</http:listener>
+		<ee:transform doc:name="Transform Message" doc:id="67a2fe4b-e391-4e08-a665-911f30b38f6b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://soapmodule.drainshawty.com/
+var desc = attributes.uriParams.desc
+var byTransport = attributes.uriParams.byTransport
+var size = if (attributes.queryParams.size == null) 5 else (attributes.queryParams.size as Number)
+var page = if (attributes.queryParams.page == null) 1 else (attributes.queryParams.page as Number)
+---
+{
+	ns0#getOrderedByTimeToMetro: {
+		arg0: page,
+		arg1: size,
+		arg2: byTransport == 'true',
+		arg3: desc == 'true'
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="e097d7ee-f4b4-42de-93b7-fbb693b9e8cc" config-ref="Web_Service_Consumer_Config" operation="getOrderedByTimeToMetro"/>
+		<ee:transform doc:name="Transform Message" doc:id="2b4f14b2-4148-4679-9489-c4f697a7becb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns2 http://soapmodule.drainshawty.com/
+
+var flatsData = payload.body.ns2#getOrderedByTimeToMetroResponse.return
+
+---
+{
+    Flats: flatsData
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	
+	
+
+
+</mule>
