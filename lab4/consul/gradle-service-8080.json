@@ -1,0 +1,10 @@
+{
+  "ID": "gradle-service-8080",
+  "Name": "gradle-service",
+  "Address": "127.0.0.1",
+  "Port": 8080,
+  "Check": {
+    "TCP": "127.0.0.1:8080",
+    "Interval": "10s"
+  }
+}

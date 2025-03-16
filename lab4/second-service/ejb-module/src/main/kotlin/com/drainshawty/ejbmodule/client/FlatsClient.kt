@@ -14,7 +14,7 @@ import org.jboss.logging.processor.apt.ProcessingException
 
 @ApplicationScoped
 class FlatsClient {
-    private val serviceUrl = "http://localhost:8080"
+    private val serviceUrl = "https://localhost:9090"
     private var client: Client? = null
 
     fun getFlatById(id: Long): FlatDTO? {

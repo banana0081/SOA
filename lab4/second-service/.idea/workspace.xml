@@ -10,13 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a56c61-cd07-4fb3-b311-d6a1b33df131" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/AgencySoapServiceInterface.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/soap-module/src/main/kotlin/com/drainshawty/soapmodule/Open.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/soap-module/src/main/webapp/WEB-INF/jboss-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/artifacts/second_service_ejb_module_main_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/artifacts/second_service_ejb_module_main_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab3/second-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/second-service/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/remote-targets.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first-service/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../first-service/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first-service/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../first-service/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first-service/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../first-service/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first-service/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../first-service/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../first-service/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../first-service/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/common/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/common/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejb-module/src/main/kotlin/com/drainshawty/ejbmodule/client/FlatsClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ejb-module/src/main/kotlin/com/drainshawty/ejbmodule/client/FlatsClient.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +52,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="second-service" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="second-service" type="f1a62948:ProjectNode" />
+                <item name="ejb-module" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -78,32 +89,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build second-service.executor": "Run",
-    "Gradle.second-service [:wrapper].executor": "Run",
-    "Gradle.second-service [build].executor": "Run",
-    "Gradle.second-service [wrapper].executor": "Run",
-    "JBoss/WildFly Server.JBoss/WildFly 35.0.0.Final.executor": "Run",
-    "JBoss/WildFly Server.Unnamed.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Workspace/to commit/SOA/lab3/second-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build second-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.second-service [:wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.second-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.second-service [wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;JBoss/WildFly Server.JBoss/WildFly 35.0.0.Final.executor&quot;: &quot;Run&quot;,
+    &quot;JBoss/WildFly Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/to commit/SOA/lab4/first-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web.server&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hopeg\IdeaProjects\second-service\web-module\src\main\kotlin\com\drainshawty\webmodule\web\responses" />
@@ -111,9 +123,9 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="gradle build" />
       <command value="gradle wrapper" />
       <command value="gradle :wrapper" />
+      <command value="gradle build" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -123,9 +135,32 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="JBoss/WildFly 35.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 35.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 35.0.0.Final">
+    <configuration name="second-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <target name="@@@LOCAL@@@" />
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="JBoss/WildFly 35.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 35.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="second-service.ejb-module.main:jar">
           <settings />
@@ -147,7 +182,7 @@
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52332" />
+        <option name="DEBUG_PORT" value="59058" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -197,18 +232,27 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : com.drainshawty : web-module-1.0-SNAPSHOT.war" />
-          <artifact name="Gradle : com.drainshawty : soap-module-1.0-SNAPSHOT.war" />
           <artifact name="second-service.ejb-module.main:jar" />
+          <artifact name="Gradle : com.drainshawty : soap-module-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : com.drainshawty : web-module-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.second-service [build]" />
+      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 35.0.0.Final" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.second-service [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
       </set>
     </attachedChunks>
   </component>
@@ -223,6 +267,19 @@
       <workItem from="1738020582665" duration="8610000" />
       <workItem from="1739499694139" duration="3547000" />
       <workItem from="1739514155051" duration="12529000" />
+      <workItem from="1739529542265" duration="1591000" />
+      <workItem from="1740068252016" duration="3601000" />
+      <workItem from="1740116922744" duration="2063000" />
+      <workItem from="1740146774160" duration="1232000" />
+      <workItem from="1740702190978" duration="293000" />
+      <workItem from="1740704329689" duration="4919000" />
+      <workItem from="1740764361663" duration="1852000" />
+      <workItem from="1741048909945" duration="1000" />
+      <workItem from="1741048960364" duration="12000" />
+      <workItem from="1741049002823" duration="24000" />
+      <workItem from="1741053328749" duration="5330000" />
+      <workItem from="1741302435443" duration="34000" />
+      <workItem from="1741356327183" duration="96000" />
     </task>
     <servers />
   </component>

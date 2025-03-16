@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ff7a3f7b-8740-48b6-a91f-1894f955ff6c" name="fearless" url="http://5.252.118.192">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="5.252.118.192" port="22" sshConfigId="211da5e3-97ab-4c2d-8e5b-7b1a78941882" sshConfig="root@5.252.118.192:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
